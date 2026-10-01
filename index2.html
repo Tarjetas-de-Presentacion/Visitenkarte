@@ -1,286 +1,243 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>María Blender - Tarjeta Digital</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --de-black: #1a1a1a;
-            --de-red: #dd0000;
-            --de-gold: #ffce00;
-            --bg-color: #f3f4f6;
-            --card-bg: #ffffff;
-            --text-dark: #1f2937;
-            --text-muted: #6b7280;
-            --whatsapp: #25d366;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>María Blender - Tarjeta de Presentación</title>
+  <!-- Iconos de FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+    body {
+      background-color: #8c929a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 15px;
+    }
 
-        body {
-            background-color: var(--bg-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 16px;
-        }
+    .card-container {
+      background-color: #e2e5eb;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      padding-bottom: 30px;
+    }
 
-        .main-container {
-            width: 100%;
-            max-width: 420px;
-            background: var(--card-bg);
-            border-radius: 20px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-            overflow: hidden;
-            padding: 20px;
-            position: relative;
-        }
+    /* Franja de la bandera de Alemania */
+    .flag-bar {
+      height: 5px;
+      background: linear-gradient(to right, #000 33.3%, #dd0000 33.3%, #dd0000 66.6%, #ffce00 66.6%);
+      width: 80%;
+      margin: 22px auto 18px auto;
+      border-radius: 3px;
+    }
 
-        .flag-bar {
-            display: flex;
-            height: 5px;
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 16px;
-            overflow: hidden;
-        }
-        .flag-bar .b1 { background: var(--de-black); flex: 1; }
-        .flag-bar .b2 { background: var(--de-red); flex: 1; }
-        .flag-bar .b3 { background: var(--de-gold); flex: 1; }
+    /* Tarjeta de información */
+    .business-card {
+      background-color: #d1d5dd;
+      margin: 0 18px 20px 18px;
+      padding: 18px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
 
-        .preview-card {
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            padding: 18px 16px;
-            background: #fafafa;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
-        }
+    .card-info {
+      flex: 1;
+    }
 
-        .preview-info {
-            text-align: left;
-            flex: 1;
-            padding-right: 12px;
-        }
+    .card-info h1 {
+      font-size: 1.25rem;
+      color: #1a1a1a;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
 
-        .preview-info h2 {
-            font-size: 19px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 2px;
-        }
+    .card-info .subtitle {
+      font-size: 0.78rem;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
 
-        .preview-info h3 {
-            font-size: 13px;
-            font-weight: 600;
-            color: #4b5563;
-            margin-bottom: 6px;
-        }
+    .card-info .description {
+      font-size: 0.7rem;
+      color: #555;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
 
-        .preview-info p {
-            font-size: 11px;
-            color: var(--text-muted);
-            line-height: 1.4;
-            margin-bottom: 8px;
-        }
+    .card-info .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.73rem;
+      color: #2b2b2b;
+      margin-bottom: 4px;
+      text-decoration: none;
+    }
 
-        .preview-info .contact-details {
-            font-size: 11px;
-            color: #374151;
-            font-weight: 500;
-            line-height: 1.5;
-        }
+    /* Logo MB BAUPHYSIK */
+    .logo-box {
+      background-color: #1b2333;
+      color: #ffffff;
+      width: 72px;
+      height: 72px;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-shrink: 0;
+    }
 
-        .preview-logo {
-            width: 75px;
-            height: 75px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            border: 2px solid #e2e8f0;
-            flex-shrink: 0;
-        }
+    .logo-box .logo-main {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1;
+    }
 
-        .preview-logo .initials {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: #ffffff;
-        }
+    .logo-box .logo-sub {
+      font-size: 0.48rem;
+      color: #d4af37;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-top: 3px;
+    }
 
-        .preview-logo .sub {
-            font-size: 7px;
-            color: var(--de-gold);
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-top: 2px;
-        }
+    /* Botones de Acción (2x2) */
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 0 18px;
+      margin-bottom: 25px;
+    }
 
-        .actions {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+    .btn {
+      background-color: #cbcfd8;
+      color: #23272d;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background-color 0.2s ease;
+    }
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 13px 16px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.2s ease;
-        }
+    .btn:hover {
+      background-color: #bdc1cb;
+    }
 
-        .btn-main {
-            background-color: #1e293b;
-            color: #ffffff;
-        }
+    .btn i {
+      font-size: 0.95rem;
+      color: #3e444e;
+    }
 
-        .btn-whatsapp {
-            background-color: var(--whatsapp);
-            color: #ffffff;
-        }
+    /* Sección Código QR */
+    .qr-section {
+      text-align: center;
+    }
 
-        .btn-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
+    .qr-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #555d68;
+      margin-bottom: 12px;
+    }
 
-        .btn-sub {
-            background-color: #f1f5f9;
-            color: #334155;
-            font-size: 14px;
-        }
+    .qr-code-box {
+      background-color: #ffffff;
+      padding: 12px;
+      border-radius: 18px;
+      display: inline-block;
+    }
 
-        .btn-sub i {
-            color: #64748b;
-        }
-
-        .qr-section {
-            margin-top: 20px;
-            padding-top: 16px;
-            border-top: 1px solid #f1f5f9;
-            text-align: center;
-        }
-
-        .qr-title {
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .qr-box {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 6px;
-            background: #ffffff;
-        }
-
-        .qr-box img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 12px;
-            font-size: 11px;
-            color: var(--text-muted);
-        }
-    </style>
+    .qr-code-box img {
+      width: 130px;
+      height: 130px;
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
-<div class="main-container">
+  <div class="card-container">
+    <!-- Franja Superior con los colores de Alemania -->
+    <div class="flag-bar"></div>
 
-    <div class="flag-bar">
-        <div class="b1"></div>
-        <div class="b2"></div>
-        <div class="b3"></div>
-    </div>
-
-    <div class="preview-card">
-        <div class="preview-info">
-            <h2>María Blender</h2>
-            <h3>Arquitecta Consultora | M.Sc. Univ. Stuttgart</h3>
-            <p>Sustentabilidad | Eficiencia Energética | Física de la Construcción | Accesibilidad Universal</p>
-            <div class="contact-details">
-                <div><i class="fas fa-envelope" style="width: 14px; color:#64748b;"></i> mail@mariablender.com</div>
-                <div><i class="fas fa-globe" style="width: 14px; color:#64748b;"></i> www.mariablender.com</div>
-            </div>
+    <!-- Tarjeta Principal -->
+    <div class="business-card">
+      <div class="card-info">
+        <h1>María Blender</h1>
+        <div class="subtitle">Arquitecta Independiente | M.Sc. Univ. Stuttgart</div>
+        <div class="description">
+          Física de la Construcción | Eficiencia Energética | Sustentabilidad | Accesibilidad Universal en Chile
         </div>
-        <div class="preview-logo">
-            <span class="initials">MB</span>
-            <span class="sub">Bauphysik</span>
-        </div>
-    </div>
-
-    <div class="actions">
-
-        <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3ABlender%3BMar%C3%ADa%3B%3B%3B%0AFN%3AMar%C3%ADa%20Blender%0ATITLE%3AArquitecta%20Consultora%20M.Sc.%20Univ.%20Stuttgart%0AORG%3AMar%C3%ADa%20Blender%20Bauphysik%0AEMAIL%3Amail%40mariablender.com%0AURL%3Ahttps%3A%2F%2Fwww.mariablender.com%0AEND%3AVCARD" download="Maria_Blender.vcf" class="btn btn-main">
-            <i class="fas fa-address-card"></i> Guardar en Contactos
+        <a href="mailto:mail@mariablender.com" class="contact-item">
+          <i class="fa-regular fa-envelope"></i> mail@mariablender.com
         </a>
-
-        <a href="https://wa.me/?text=Hola%20Mar%C3%ADa%2C%20he%20recibido%20tu%20tarjeta%20digital." target="_blank" class="btn btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> Mensaje por WhatsApp
+        <a href="https://www.mariablender.com" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <i class="fa-solid fa-globe"></i> www.mariablender.com
         </a>
+      </div>
 
-        <div class="btn-grid">
-            <a href="mailto:mail@mariablender.com" class="btn btn-sub">
-                <i class="fas fa-envelope"></i> Correo
-            </a>
-            <a href="https://www.mariablender.com" target="_blank" class="btn btn-sub">
-                <i class="fas fa-globe"></i> Sitio Web
-            </a>
-            <a href="https://www.linkedin.com/search/results/all/?keywords=Maria%20Blender%20Arquitecta%20Chile" target="_blank" class="btn btn-sub">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="mailto:mail@mariablender.com" class="btn btn-sub">
-                <i class="fas fa-phone"></i> Llamar
-            </a>
-        </div>
+      <!-- Logo "MB BAUPHYSIK" -->
+      <div class="logo-box">
+        <div class="logo-main">MB</div>
+        <div class="logo-sub">BAUPHYSIK</div>
+      </div>
     </div>
 
+    <!-- Botones de Acción -->
+    <div class="buttons-grid">
+      <!-- 1. Correo -->
+      <a href="mailto:mail@mariablender.com" class="btn">
+        <i class="fa-regular fa-envelope"></i> Correo
+      </a>
+
+      <!-- 2. Sitio Web -->
+      <a href="https://www.mariablender.com" target="_blank" rel="noopener noreferrer" class="btn">
+        <i class="fa-solid fa-globe"></i> Sitio Web
+      </a>
+
+      <!-- 3. LinkedIn -->
+      <a href="https://www.linkedin.com/in/mblender" target="_blank" rel="noopener noreferrer" class="btn">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+
+      <!-- 4. Llamar (Teléfono) -->
+      <a href="tel:+56995362673" class="btn">
+        <i class="fa-solid fa-phone"></i> Llamar
+      </a>
+    </div>
+
+    <!-- Código QR -->
     <div class="qr-section">
-        <p class="qr-title">Escanear para Compartir</p>
-        <div class="qr-box">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tarjetas-de-presentacion.github.io/Visitenkarte/index2.html" alt="QR María Blender Español">
-        </div>
+      <div class="qr-title">ESCANEAR PARA COMPARTIR</div>
+      <div class="qr-code-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.mariablender.com" alt="Código QR">
+      </div>
     </div>
-
-    <div class="footer">
-        © mariablender.com
-    </div>
-
-</div>
+  </div>
 
 </body>
 </html>
-
