@@ -44,7 +44,6 @@
             position: relative;
         }
 
-        /* Detalle Bandera de Alemania */
         .flag-bar {
             display: flex;
             height: 5px;
@@ -57,7 +56,6 @@
         .flag-bar .b2 { background: var(--de-red); flex: 1; }
         .flag-bar .b3 { background: var(--de-gold); flex: 1; }
 
-        /* Tarjeta Impresa Simulada (Estilo NEINGEN) */
         .preview-card {
             border: 1px solid #e5e7eb;
             border-radius: 14px;
@@ -134,7 +132,6 @@
             margin-top: 2px;
         }
 
-        /* Botones de Acción */
         .actions {
             display: flex;
             flex-direction: column;
@@ -180,7 +177,6 @@
             color: #64748b;
         }
 
-        /* Código QR para compartir */
         .qr-section {
             margin-top: 20px;
             padding-top: 16px;
@@ -224,21 +220,19 @@
 
 <div class="main-container">
 
-    <!-- Detalle de la bandera de Alemania -->
     <div class="flag-bar">
         <div class="b1"></div>
         <div class="b2"></div>
         <div class="b3"></div>
     </div>
 
-    <!-- Módulo de Tarjeta Ejecutiva (Visual) -->
     <div class="preview-card">
         <div class="preview-info">
             <h2>María Blender</h2>
-            <h3>Architektin & Beraterin</h3>
-            <p>Bauphysik | Energieeffizienz | Wärmeschutz für Gebäude in Chile</p>
+            <h3>Freie Architektin | M.Sc. Univ. Stuttgart</h3>
+            <p>Bauphysik | Energieeffizienz | Nachhaltigkeit | Barrierefreiheit in Chile</p>
             <div class="contact-details">
-                <div><i class="fas fa-envelope" style="width: 14px; color:#64748b;"></i> contacto@mariablender.com</div>
+                <div><i class="fas fa-envelope" style="width: 14px; color:#64748b;"></i> mail@mariablender.com</div>
                 <div><i class="fas fa-globe" style="width: 14px; color:#64748b;"></i> www.mariablender.com</div>
             </div>
         </div>
@@ -248,37 +242,32 @@
         </div>
     </div>
 
-    <!-- Botones Principales de Acción -->
     <div class="actions">
 
-        <!-- Guardar en Contactos -->
-        <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3ABlender%3BMar%C3%ADa%3B%3B%3B%0AFN%3AMar%C3%ADa%20Blender%0ATITLE%3AArchitektin%20%26%20Beraterin%20f%C3%BCr%20Bauphysik%0AORG%3AMar%C3%ADa%20Blender%20Bauphysik%0AEMAIL%3Acontacto%40mariablender.com%0AURL%3Ahttps%3A%2F%2Fmariablender.com%0AEND%3AVCARD" download="Maria_Blender.vcf" class="btn btn-main">
+        <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3ABlender%3BMar%C3%ADa%3B%3B%3B%0AFN%3AMar%C3%ADa%20Blender%0ATITLE%3AFreie%20Architektin%20M.Sc.%20Univ.%20Stuttgart%0AORG%3AMar%C3%ADa%20Blender%20Bauphysik%0AEMAIL%3Amail%40mariablender.com%0AURL%3Ahttps%3A%2F%2Fwww.mariablender.com%0AEND%3AVCARD" download="Maria_Blender.vcf" class="btn btn-main">
             <i class="fas fa-address-card"></i> In Kontakten speichern
         </a>
 
-        <!-- Enviar WhatsApp -->
         <a href="https://wa.me/?text=Hallo%20Mar%C3%ADa%2C%20ich%20habe%20Ihre%20Visitenkarte%20erhalten." target="_blank" class="btn btn-whatsapp">
             <i class="fab fa-whatsapp"></i> WhatsApp Nachricht
         </a>
 
-        <!-- Cuadrícula 2x2 -->
         <div class="btn-grid">
-            <a href="mailto:contacto@mariablender.com" class="btn btn-sub">
+            <a href="mailto:mail@mariablender.com" class="btn btn-sub">
                 <i class="fas fa-envelope"></i> E-Mail
             </a>
-            <a href="https://mariablender.com" target="_blank" class="btn btn-sub">
+            <a href="https://www.mariablender.com" target="_blank" class="btn btn-sub">
                 <i class="fas fa-globe"></i> Website
             </a>
-            <a href="https://www.linkedin.com/in/mariablender/" target="_blank" class="btn btn-sub">
+            <a href="https://www.linkedin.com/search/results/all/?keywords=Maria%20Blender%20Arquitecta%20Chile" target="_blank" class="btn btn-sub">
                 <i class="fab fa-linkedin"></i> LinkedIn
             </a>
-            <a href="mailto:contacto@mariablender.com" class="btn btn-sub">
+            <a href="mailto:mail@mariablender.com" class="btn btn-sub">
                 <i class="fas fa-phone"></i> Anrufen
             </a>
         </div>
     </div>
 
-    <!-- Código QR para compartir -->
     <div class="qr-section">
         <p class="qr-title">Scannen zum Teilen</p>
         <div class="qr-box">
